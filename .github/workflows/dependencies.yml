@@ -1,6 +1,5 @@
 name: dependencies 
 on: [push]
-#working-directory: ./
 jobs:
   setup:
     runs-on: ubuntu-latest
@@ -11,9 +10,11 @@ jobs:
     needs: setup
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: ./build_server.sh
   test:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: ./test_server.sh
