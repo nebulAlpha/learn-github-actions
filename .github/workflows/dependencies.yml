@@ -1,6 +1,6 @@
 name: dependencies 
 on: [push]
-working-directory: ./
+#working-directory: ./
 jobs:
   setup:
     runs-on: ubuntu-latest
